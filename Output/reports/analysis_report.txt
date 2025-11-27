@@ -1,0 +1,6 @@
+
+Total Words: 12
+Unique Words: 10
+Most Frequent Word: is (2)
+Emails: ['example@test.com']
+Numbers: ['9876543210']
