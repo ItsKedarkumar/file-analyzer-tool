@@ -1,0 +1,7 @@
+pandas
+matplotlib
+pytesseract
+openpyxl
+pdf2image
+pillow
+python-docx
