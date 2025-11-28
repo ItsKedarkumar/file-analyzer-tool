@@ -263,17 +263,38 @@ def export_analysis_to_excel():
     wb.save(excel_path)
     print(f"📁 Summary exported to Excel at: {excel_path}")
 
-def generate_final_summary():
-    summary_path = os.path.join(BASE_DIR, "final_project_summary.txt")
-    with open(summary_path, "w") as f:
-        f.write("FINAL PROJECT SUMMARY\n----------------------\n")
-        if last_text_result:
-            f.write("\nTEXT ANALYSIS\n" + last_text_result)
-        if last_csv_result is not None:
-            f.write("\nCSV ANALYSIS\n" + str(last_csv_result))
-        f.write("\nOCR Aadhaar Data saved in Excel (if scanned)\n")
+from datetime import datetime
 
-    print(f"📝 Final summary saved at: {summary_path}")
+def generate_final_summary(text_summary, csv_summary, ocr_summary="OCR Aadhaar Data extracted (if scanned)"):
+    output_path = os.path.join(BASE_DIR, "final_project_summary.txt")
+
+    now = datetime.now().strftime("%d-%m-%Y | Time: %I:%M %p")
+
+    summary = f"""
+FILE ANALYZER TOOL – FINAL PROJECT SUMMARY
+Developer : Kedar Kumar Trivedi
+Date      : {now}
+Version   : v1.0 (Mini Project – SEM 4)
+-----------------------------------------
+
+TEXT ANALYSIS
+{text_summary}
+
+CSV ANALYSIS
+{csv_summary}
+
+OCR Aadhaar:
+{ocr_summary}
+
+-----------------------------------------
+Generated using Python – File Analyzer Tool
+    """
+
+    with open(output_path, "w", encoding="utf-8") as file:
+        file.write(summary)
+
+    print(f"📄 Final summary saved at: {output_path}")
+
 
 # =======================
 # MAIN MENU

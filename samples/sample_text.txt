@@ -1,0 +1,7 @@
+Hello, this is a sample test text file for the File Analyzer Tool.
+This project analyzes different types of files such as text, CSV, and PDF.
+You can contact us at example@test.com for any queries.
+My phone number is 9876543210.
+Python is amazing! Testing keyword detection and special characters: @, #, $, %.
+Let’s see how many times the word “test” appears in this file.
+test test TEST 😊
