@@ -38,3 +38,5 @@ Thumbs.db
 # Ignore unnecessary merge files
 *.orig
 *.rej
+!test_files/sample*.txt
+!test_files/sample*.csv
